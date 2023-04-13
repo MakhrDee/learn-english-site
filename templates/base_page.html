@@ -10,13 +10,12 @@
     <link rel="icon" href="{% static 'alphabet-letter-svgrepo-com.svg' %}" type="image/svg+xml">
 </head>
 <body>
-<main class="" style="background-color: #cecee0;
+<main style="background-color: #fbe09d;
 opacity: 1;
-background-image:  radial-gradient(#21222c 0.5px, transparent 0.5px),
-radial-gradient(#21222c 0.5px, #cecee0 0.5px);
-background-size: 20px 20px;
-background-position: 0 0,10px 10px;
-background-position: fixed">
+background-image:  radial-gradient(#000000 0.7000000000000001px, transparent 0.7000000000000001px),
+radial-gradient(#000000 0.7000000000000001px, #fbe09d 0.7000000000000001px);
+background-size: 28px 28px;
+background-position: 0 0,14px 14px;">
     <div class="sticky-top bg-success bg-gradient"
          style="box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
          rgba(0, 0, 0, 0.22) 0px 15px 12px;">
@@ -24,10 +23,10 @@ background-position: fixed">
             <div class="d-flex align-items-center mx-3
             rounded-bottom">
                 <a href="/" class="fs-1 my-1 me-auto text-light text-decoration-none">
-                    <img src="{% static 'learning.png' %}" alt="Проект про математику" width="64px" height="64px"/>
-                    <span>Английский с нуля</span>
+                    <img src="{% static 'learning.png' %}" alt="ZeroEnglish" width="64px" height="64px"/>
+                    <span>ZeroEnglish</span>
                 </a>
-                <a href="/" class="fs-1 my-1 me-auto text-light text-decoration-none">
+                <a href="/" class="my-1 mx-auto text-light text-decoration-none">
                     <img src="{% static '15-Techniques-for-Learning-English-Vocabulary.png' %}" width="128px" height="64px"/>
                 </a>
                 <a href="/" class="fs-4 my-auto mx-3 text-light text-decoration-none">
@@ -51,7 +50,9 @@ background-position: fixed">
                 <img src="{% static '199-1993094_london-png-transparent.png' %}" class="img-fluid">
             </div>
             <div class="align-self-start py-3 bg-primary bg-gradient rounded-bottom"
-            style="box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;">
+            style="box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+            rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+            rgba(0, 0, 0, 0.2) 0px -3px 0px inset;">
                 <h1 class="display-1 fw-bold text-center text-light mb-3">{% block page-title %}{% endblock %}</h1>
                 <p class="px-5 fs-4 fst-italic text-center text-light">{% block page-lead %}{% endblock %}</p>
             </div>
@@ -61,15 +62,15 @@ background-position: fixed">
         </div>
     </div>
         {% block content %}{% endblock %}
-    <footer class="footer pt-3 mt-4 bg-success text-light border-top" style="box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
-         rgba(0, 0, 0, 0.22) 0px 15px 12px;"><b>© 2023</b></footer>
+    <footer class="footer pt-3 mt-5 bg-success text-light"
+            style="box-shadow:rgba(0, 0, 0, 0.5) 0 0 15px 10px"><b>© 2023</b></footer>
 
 </main>
 </body>
 </html>
 
-<!-- TODO: добавить тень на футер и сделать его таким же цветом,
- что и шапку, Добавить на мейн размытие,
+<!-- TODO: , Добавить на мейн размытие,
  зафиксировать прокрутку фона, добавить рельеф на шапку,
  сделать главный экран набором карточек с кнопками,
- Сделать кнопку возврата к началу страницы-->
+ Сделать кнопку возврата к началу страницы, подобрать наиболее подходящие картинки,
+ Придумать более уникальное название сайта-->
