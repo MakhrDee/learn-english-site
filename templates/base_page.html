@@ -12,10 +12,11 @@
 <body>
 <main style="background-color: #fbe09d;
 opacity: 1;
-background-image:  radial-gradient(#000000 0.7000000000000001px, transparent 0.7000000000000001px),
+background-image: radial-gradient(#000000 0.7000000000000001px, transparent 0.7000000000000001px),
 radial-gradient(#000000 0.7000000000000001px, #fbe09d 0.7000000000000001px);
 background-size: 28px 28px;
 background-position: 0 0,14px 14px;">
+
     <div class="sticky-top bg-success bg-gradient"
          style="box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
          rgba(0, 0, 0, 0.22) 0px 15px 12px;">
@@ -27,7 +28,7 @@ background-position: 0 0,14px 14px;">
                     <span>ZeroEnglish</span>
                 </a>
                 <a href="/" class="my-1 mx-auto text-light text-decoration-none">
-                    <img src="{% static '15-Techniques-for-Learning-English-Vocabulary.png' %}" width="128px" height="64px"/>
+                    <img src="{% static 'english-colored-rainbow-word-text-suitable-logo-design-card-brochure-typography-127992761.png' %}" width="256" height="30%"/>
                 </a>
                 <a href="/" class="fs-4 my-auto mx-3 text-light text-decoration-none">
                     <span><i>Главная</i></span>
@@ -45,24 +46,26 @@ background-position: 0 0,14px 14px;">
         </header>
     </div>
     <div class="container-fluid">
-        <div class= "d-flex" id="title-box">
-            <div class="d-flex align-items-end mx-2">
-                <img src="{% static '199-1993094_london-png-transparent.png' %}" class="img-fluid">
-            </div>
-            <div class="align-self-start py-3 bg-primary bg-gradient rounded-bottom"
-            style="box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-            rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
-            rgba(0, 0, 0, 0.2) 0px -3px 0px inset;">
-                <h1 class="display-1 fw-bold text-center text-light mb-3">{% block page-title %}{% endblock %}</h1>
-                <p class="px-5 fs-4 fst-italic text-center text-light">{% block page-lead %}{% endblock %}</p>
-            </div>
-             <div class="d-flex align-items-end mx-2">
-                <img src="{% static 'Big-Ben.png' %}" class="img-fluid">
+        <div style="background-image: url('static/big-ben--london-560641539-59ad5adfc412440010560c8c.png');
+background-size: cover;">
+            <div class= "d-flex" id="title-box">
+                <div class="align-self-start py-3 bg-gradient rounded-bottom"
+                    style="box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+                    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+                    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+                    background-color: #4a6ef0">
+                    <h1 class="display-1 fw-bold text-center text-light mb-3 px-5">{% block page-title %}{% endblock %}</h1>
+                    <p class="px-5 fs-4 fst-italic text-center text-light">{% block page-lead %}{% endblock %}</p>
+                </div>
+                <div class="d-flex align-items-center mx-2">
+                <img src="{% static 'big-ben--london-560641539-59ad5adfc412440010560c8c.jpg' %}" class="img-fluid" style="opacity: 0;"> <!--TODO: убрать блок-->
+                </div>
             </div>
         </div>
     </div>
+
         {% block content %}{% endblock %}
-    <footer class="footer pt-3 mt-5 bg-success text-light"
+    <footer class="footer pt-3 mt-5 bg-success bg-gradient text-light"
             style="box-shadow:rgba(0, 0, 0, 0.5) 0 0 15px 10px"><b>© 2023</b></footer>
 
 </main>
