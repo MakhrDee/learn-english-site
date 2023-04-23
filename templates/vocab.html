@@ -14,24 +14,25 @@
 {% block content %}
 <div class="container px-4 py-5" id="vocab-table">
     <div class="table-responsive">
-        <table class="table table-striped table-hover">
-          <thead>
-            <tr>
-              <th scope="col" class="py-3">#</th>
-              <th scope="col" class="py-3">Английский (English)</th>
+        <table class="table table-striped table-hover table-bordered border-dark">
+            <thead>
+            <tr class="table-active">
+                <th scope="col" class="py-3">#</th>
+                <th scope="col" class="py-3">Английский (English)</th>
                 <th scope="col" class="py-3">Русский (Russian)</th>
-              <th scope="col" class="py-3">Значение (Meaning)</th>
+                <th scope="col" class="py-3">Значение (Meaning)</th>
             </tr>
-          </thead>
-          <tbody>
+            </thead>
+            <tbody>
                 {% for cnt, term, definition in terms %} <!--TODO: Подключить БД-->
                 <tr>
                     <td class="py-3">{{ cnt }}</td>
                     <td class="py-3">{{ term }}</td>
+                    <td class="py-3">{{ term }}</td>
                     <td class="py-3">{{ definition }}</td>
                 </tr>
                 {% endfor %}
-          </tbody>
+            </tbody>
         </table>
       </div>
 </div>
