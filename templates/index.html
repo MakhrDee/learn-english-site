@@ -1,104 +1,103 @@
 {% extends "base_page.html" %}
 
 {% block page-title %}
-Математика и её термины
+Английский язык с нуля
 {% endblock %}
 
 {% block page-lead %}
-Это страничка проекта про изучение математики. <br/>
-Этот проект и его исходный код можно использовать как reference или источник вдохновения для своего проекта.
+Это страница посвящена изучению английского языка. <br/>
+<!--Этот проект и его исходный код можно использовать как reference или источник вдохновения для своего проекта.-->
 {% endblock %}
 
 {% block content %}
-<div class="container px-4 py-5" style="box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
-            rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
-            rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;" id="project-contents">
-    <h2 class="pb-2 border-bottom">Что есть в этом проекте</h2>
-    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-        <div class="col d-flex">
-            <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                <svg class="bi" width="1em" height="1em">
-                    <use xlink:href="#cpu-fill"></use>
-                </svg>
-            </div>
-            <div>
-                <h3 class="fs-2">Список терминов</h3>
-                <p>Простая страница с контентом, который разложен в таблицу. Содержимое таблицы находится в текстовом
-                    файле (если вы уверенно себя чувствуете, замените текстовый файл на базу данных).</p>
-                <a href="/terms-list" class="btn btn-primary">Посмотреть</a>
+<div class="container px-5 py-5 my-5 bg-light" style="box-shadow: rgba(0, 0, 0, 0.3) 0 0 15px 10px;" id="project-contents">
+
+    <h2 class="pb-2 border-bottom border-dark">Что можно посмотреть?</h2>
+
+    <div class="row justify-content-start align-items-start my-5">
+        <div class="col-sm-4">
+            <div class="card text-center"
+            style="box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;">
+                <img src="static/iStock_000002193842Medium_0_0.jpg" class="card-img-top" alt="Vocabulary">
+                <div class="card-body">
+                    <h5 class="card-title">Словарь</h5>
+                    <p class="card-text text-start text-muted">Посмотреть список изученных слов с переводом</p>
+                    <a href="/vocabulary" class="btn btn-primary">Посмотреть</a>
+                </div>
             </div>
         </div>
-        <div class="col d-flex">
-            <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                <svg class="bi" width="1em" height="1em">
-                    <use xlink:href="#cpu-fill"></use>
-                </svg>
-            </div>
-            <div>
-                <h3 class="fs-2">Форма для заполнения термина</h3>
-                <p>Пример POST-запроса, который отправится после того, как вы заполните форму. Он допишет термин в ваш
-                    текстовый файл, и если всё будет успешно — вас перенаправят на страницу терминов</p>
-                <a href="/add-term" class="btn btn-primary">
-                    Заполнить
-                </a>
-            </div>
-        </div>
-        <div class="col d-flex">
-            <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                <svg class="bi" width="1em" height="1em">
-                    <use xlink:href="#cpu-fill"></use>
-                </svg>
-            </div>
-            <div>
-                <h3 class="fs-2">Статистика</h3>
-                <p>Сколько терминов уже есть? Какой они длины?</p>
-                <a href="/stats" class="btn btn-primary">
-                    Изучить
-                </a>
+        <div class="col-sm-4">
+            <div class="card text-center"
+            style="box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;">
+                <img src="static/1000_F_194839975_YpYbRSE4k9WYxVHJzqC75esbl670gpf5.jpg" class="card-img-top" alt="Lessons">
+                <div class="card-body">
+                    <h5 class="card-title">Уроки</h5>
+                    <p class="card-text text-start text-muted">Посмотреть список пройденных уроков</p>
+                    <a href="/lessons-list" class="btn btn-primary">Посмотреть</a>
+                </div>
             </div>
         </div>
     </div>
-    <h2 class="pb-2 border-bottom">Что можете сделать вы?</h2>
-    <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
-        <div class="col-lg-4">
-            <h4 class="py-1">Добавить ещё одну форму</h4>
+
+    <h2 class="pb-2 border-bottom border-dark">Интерактивные возможности</h2>
+
+    <div class="row justify-content-start align-items-start my-5">
+        <div class="col-sm-4">
+            <div class="card text-center"
+            style="box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;">
+                <img src="static/maxresdefault.jpg" class="card-img-top" alt="Add new word">
+                <div class="card-body">
+                    <h5 class="card-title">Добавить слово</h5>
+                    <p class="card-text text-start text-muted">Заполнить форму для добавления новых слов в словарь</p>
+                    <a href="/add-word" class="btn btn-primary">Добавить</a>
+                </div>
+            </div>
         </div>
-        <div class="col-lg-8">
-            <p>Чтобы получить максимальную оценку по проекту, нужно две страницы, которые <span class="fst-italic">показывают</span>
-            контент, а две страницы, которые <span class="fst-italic">принимают</span> контент. Одна страница с
-            POST-запросом создана — это <a href="/add-term">форма сбора терминов</a>. Добавьте ещё одну форму и view, обрабатывающий её!</p>
+
+        <div class="col-sm-4">
+            <div class="card text-center"
+            style="box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;">
+                <img src="static/img_screen-capture_jpnrds.svg" class="card-img-top" alt="Add new lesson">
+                <div class="card-body">
+                    <h5 class="card-title">Добавить урок</h5>
+                    <p class="card-text text-start text-muted">Заполнить форму для добавления новых пройденных уроков</p>
+                    <a href="/add-lesson" class="btn btn-primary">Добавить</a>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
-        <div class="col-lg-4">
-            <h4 class="py-1">Разнообразить контент</h4>
-        </div>
-        <div class="col-lg-8">
-            <p>Этот проект — про математику. В условии проекта в курсе — иностранные языки. Измените содержимое страниц,
-                чтобы они были полезны в контексте изучения иностранного языка (несколько примеров есть в описании проекта).</p>
+
+    <h2 class="pb-2 border-bottom border-dark">Дополнительно</h2>
+
+    <div>
+        <div class="col-sm-4 my-5">
+            <div class="card text-center"
+            style="box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;">
+                <img src="static/abstract-3d-numbers-background-computer-260nw-1165123771.jpg"
+                     class="card-img-top" alt="Statistics" style="filter: blur(0.5px);">
+                <div class="card-body">
+                    <h5 class="card-title">Статистика</h5>
+                    <p class="card-text text-start text-muted">
+                        Посмотреть статистику по добавленные и изученным словам и урокам</p>
+                    <a href="/add-lesson" class="btn btn-primary">Посмотреть</a>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
-        <div class="col-lg-4">
-            <h4 class="py-1">Изменить вёрстку и/или дизайн-систему</h4>
-        </div>
-        <div class="col-lg-8">
-            <p>Этот проект использует <a href="https://getbootstrap.com">Bootstrap</a>. Попробуйте другие дизайн-системы, например:
-                <ul>
-                    <li><a href="https://materializecss.com">Materialize</a></li>
-                    <li><a href="https://semantic-ui.com">Semantic UI</a></li>
-                    <li><a href="https://get.foundation/templates.html">Foundation</a></li>
-                </ul>
-            </p>
-            <p>
-                Если же вам хочется оставить Bootstrap — измените вёрстку! Добавьте картинок, замените стили — словом, пробудите
-                внутреннего художника.
-            </p>
-            <p>
-                <span class="fst-italic">Вариант улучшения:</span> как правило, у сайта есть фавикон — маленькая иконка, отображающаяся
-                рядом с названием сайта во вкладке или окне браузера. Сейчас её нет — но вы можете её добавить.
-            </p>
-        </div>
+
+    <h2 class="pb-2 border-bottom border-dark" id="about-proj">О проекте</h2><br>
+
+    <div>
+        <p>
+            Этот веб-проект разработан в рамках учебного курса "Программирование на Python". В качестве
+            reference-проекта был использован
+            "<a href="https://github.com/dig-kafedra-webdev/maths-site">Проект про математику</a>".
+        </p><br>
+        <p>
+            Исходный репозиторий текущего веб-проекта можно найти на GitHub автора по
+            <a href="https://github.com/MakhrDee/learn-english-site">ссылке</a>.
+        </p>
+
     </div>
 </div>
 {% endblock %}
