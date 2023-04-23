@@ -14,12 +14,13 @@ def terms_list(request):
 
 
 def terms_list_new(request, slug):
+    terms = terms_work.get_terms_for_table()
     if slug == 'random':
-        terms = terms_work.get_terms_for_table()
-        terms = random.choice(terms)
+        random_term = list()
+        random_term.append(random.choice(terms))
+        return render(request, "term_list.html", context={"terms": random_term, "slug": slug})
     else:
-        terms = terms_work.get_terms_for_table()
-    return render(request, "term_list.html", context={"terms": terms, "slug": slug})
+        return render(request, "term_list.html", context={"terms": terms})
 
 
 def add_term(request):
