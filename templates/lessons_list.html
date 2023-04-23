@@ -1,10 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base_page.html" %}
 
-</body>
-</html>
+{% block page-title %}
+Уроки
+{% endblock %}
+
+{% block page-lead %}
+Список пройденных уроков
+{% if slug %}
+ Получен slug = {{ slug }}.
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<div class="container px-4 py-5" id="lessons-table">
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th scope="col" class="py-3">#</th>
+                    <th scope="col" class="py-3">Тема урока</th>
+                    <th scope="col" class="py-3">Описание урока</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cnt, term, definition in terms %} <!--TODO: Подключить БД-->
+                <tr>
+                    <td class="py-3">{{ cnt }}</td>
+                    <td class="py-3">{{ term }}</td>
+                    <td class="py-3">{{ definition }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
