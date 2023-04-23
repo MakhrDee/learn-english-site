@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.core.cache import cache
-from . import terms_work
+from . import vocab_work
 import random
 
 
@@ -9,22 +9,22 @@ def index(request):
 
 
 def terms_list(request):
-    terms = terms_work.get_terms_for_table()
-    return render(request, "term_list.html", context={"terms": terms})
+    terms = vocab_work.get_terms_for_table()
+    return render(request, "vocab.html", context={"terms": terms})
 
 
 def terms_list_new(request, slug):
-    terms = terms_work.get_terms_for_table()
+    terms = vocab_work.get_terms_for_table()
     if slug == 'random':
         random_term = list()
         random_term.append(random.choice(terms))
-        return render(request, "term_list.html", context={"terms": random_term, "slug": slug})
+        return render(request, "vocab.html", context={"terms": random_term, "slug": slug})
     else:
-        return render(request, "term_list.html", context={"terms": terms})
+        return render(request, "vocab.html", context={"terms": terms})
 
 
 def add_term(request):
-    return render(request, "term_add.html")
+    return render(request, "word_add.html")
 
 
 def send_term(request):
@@ -43,7 +43,7 @@ def send_term(request):
         else:
             context["success"] = True
             context["comment"] = "Ваш термин принят"
-            terms_work.write_term(new_term, new_definition)
+            vocab_work.write_term(new_term, new_definition)
         if context["success"]:
             context["success-title"] = ""
         return render(request, "term_request.html", context)
@@ -52,5 +52,5 @@ def send_term(request):
 
 
 def show_stats(request):
-    stats = terms_work.get_terms_stats()
+    stats = vocab_work.get_terms_stats()
     return render(request, "stats.html", stats)
