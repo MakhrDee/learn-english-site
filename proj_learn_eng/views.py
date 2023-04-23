@@ -32,7 +32,7 @@ def add_word(request):
     return render(request, "word_add.html")
 
 
-def send_term(request):
+def send_word(request):
     if request.method == "POST":
         cache.clear()
         user_name = request.POST.get("name")
@@ -48,12 +48,12 @@ def send_term(request):
         else:
             context["success"] = True
             context["comment"] = "Ваш термин принят"
-            vocab_work.write_term(new_term, new_definition)
+            vocab_work.write_word(new_term, new_definition)
         if context["success"]:
             context["success-title"] = ""
         return render(request, "term_request.html", context)
     else:
-        add_term(request)
+        add_word(request)
 
 
 def show_stats(request):

@@ -23,7 +23,7 @@ urlpatterns = [
     path('lessons-list', views.lessons_list),
     path('terms-list/<slug:slug>/', views.terms_list_new),
     path('add-word', views.add_word),
-    path('send-word', views.send_term),
+    path('send-word', views.send_word),
     path('stats', views.show_stats),
     path('add-lesson', views.add_lesson)
 

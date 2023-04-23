@@ -9,7 +9,7 @@ def get_terms_for_table():
     return terms
 
 
-def write_term(new_term, new_definition):
+def write_word(new_term, new_definition):
     new_term_line = f"{new_term};{new_definition};user"
     with open("./data/terms.csv", "r", encoding="utf-8") as f:
         existing_terms = [l.strip("\n") for l in f.readlines()]
