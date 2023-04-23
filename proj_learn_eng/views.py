@@ -8,9 +8,14 @@ def index(request):
     return render(request, "index.html")
 
 
-def terms_list(request):
+def vocabulary(request):
     terms = vocab_work.get_terms_for_table()
     return render(request, "vocab.html", context={"terms": terms})
+
+
+def lessons_list(request):
+    terms = vocab_work.get_terms_for_table()
+    return render(request, "lessons_list.html", context={"terms": terms})
 
 
 def terms_list_new(request, slug):
@@ -23,7 +28,7 @@ def terms_list_new(request, slug):
         return render(request, "vocab.html", context={"terms": terms})
 
 
-def add_term(request):
+def add_word(request):
     return render(request, "word_add.html")
 
 
@@ -54,3 +59,7 @@ def send_term(request):
 def show_stats(request):
     stats = vocab_work.get_terms_stats()
     return render(request, "stats.html", stats)
+
+
+def add_lesson(request):
+    return render(request, "lesson_add.html")
