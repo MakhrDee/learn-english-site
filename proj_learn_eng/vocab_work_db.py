@@ -15,12 +15,12 @@ def db_get_lessons_for_table():
     return lessons
 
 
-'''def db_write_term(new_term, new_definition):
-term = Terms(term=new_term, definition=new_definition)
-term_addition = TermAuthors(termid=term.termid, termsource=”user”)
-term.save()
-term_addition.save()
-def db_get_terms_stats():
+def db_write_word(new_word, new_translate, new_meaning):
+    word = Vocabulary(word=new_word, translate=new_translate, meaning=new_meaning)
+    word.save()
+
+
+'''def db_get_terms_stats():
 db_terms = len(TermAuthors.objects.filter(termsource=”db”))
 user_terms = len(TermAuthors.objects.filter(termsource=”user”))
 terms = Terms.objects.all()

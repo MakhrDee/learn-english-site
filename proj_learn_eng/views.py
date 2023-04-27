@@ -37,22 +37,20 @@ def send_word(request):
     if request.method == "POST":
         cache.clear()
         user_name = request.POST.get("name")
-        new_term = request.POST.get("new_term", "")
-        new_definition = request.POST.get("new_definition", "").replace(";", ",")
+        new_word = request.POST.get("new_word", "")
+        new_translate = request.POST.get("new_translate", "")
+        new_meaning = request.POST.get("new_meaning", "")
         context = {"user": user_name}
-        if len(new_definition) == 0:
+        if len(new_word) == 0 or len(new_translate) == 0 or len(new_meaning) == 0:
             context["success"] = False
-            context["comment"] = "Описание должно быть не пустым"
-        elif len(new_term) == 0:
-            context["success"] = False
-            context["comment"] = "Термин должен быть не пустым"
+            context["comment"] = "Поле не может быть пустым"
         else:
             context["success"] = True
-            context["comment"] = "Ваш термин принят"
-            vocab_work.write_word(new_term, new_definition)
+            context["comment"] = "Новое слово сохранено"
+            vocab_work_db.db_write_word(new_word, new_translate, new_meaning)
         if context["success"]:
             context["success-title"] = ""
-        return render(request, "term_request.html", context)
+        return render(request, "success_request.html", context)
     else:
         add_word(request)
 

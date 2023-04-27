@@ -32,17 +32,18 @@
         </div>
         <div class="row px-5 py-2">
             <div class="col-md-3">
-                <label for="new_term">Слово на английском языке</label>
-                <input type="text" class="form-control input-lg" name="new_term" id="new_term">
+                <label for="new_word">Слово на английском языке</label>
+                <input type="text" class="form-control input-lg" name="new_word" id="new_word">
             </div>
             <div class="col-md-3">
-                <label for="new_term">Перевод на русский язык</label>
-                <input type="text" class="form-control input-lg" name="translate" id="translate">
+                <label for="new_translate">Перевод на русский язык</label>
+                <input type="text" class="form-control input-lg" name="new_translate" id="new_translate">
             </div>
             <div class="col-md-6">
-                <label for="new_definition">Значение слова</label>
-                <textarea type="text" class="form-control input-lg" name="new_definition" id="new_definition" aria-describedby="definition_note" rows="3"></textarea>
-                <div id="definition_note" class="form-text">Укажите краткое значение слова.<br>
+                <label for="new_meaning">Значение слова</label>
+                <textarea type="text" class="form-control input-lg" name="new_meaning" id="new_meaning"
+                          aria-describedby="meaning_note" rows="3"></textarea>
+                <div id="meaning_note" class="form-text">Укажите краткое значение слова.<br>
                     Если значений несколько, запишите из через точку с запятой.</div>
             </div>
         </div>
@@ -52,5 +53,3 @@
     </form>
 </div>
 {% endblock %}
-
-<!--TODO: Изменить name и id под контент-->
