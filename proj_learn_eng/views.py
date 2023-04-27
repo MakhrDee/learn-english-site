@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.core.cache import cache
 from . import vocab_work
+from . import vocab_work_db
 import random
 
 
@@ -9,8 +10,8 @@ def index(request):
 
 
 def vocabulary(request):
-    terms = vocab_work.get_terms_for_table()
-    return render(request, "vocab.html", context={"terms": terms})
+    words = vocab_work_db.db_get_words_for_table()
+    return render(request, "vocab.html", context={"words": words})
 
 
 def lessons_list(request):

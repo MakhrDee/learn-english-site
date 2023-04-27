@@ -24,12 +24,12 @@
             </tr>
             </thead>
             <tbody>
-                {% for cnt, term, definition in terms %} <!--TODO: Подключить БД-->
+                {% for index, word, translate, meaning in words %} <!--TODO: Подключить БД-->
                 <tr>
-                    <td class="py-3">{{ cnt }}</td>
-                    <td class="py-3">{{ term }}</td>
-                    <td class="py-3">{{ term }}</td>
-                    <td class="py-3">{{ definition }}</td>
+                    <td class="py-3">{{ index }}</td>
+                    <td class="py-3">{{ word }}</td>
+                    <td class="py-3">{{ translate }}</td>
+                    <td class="py-3">{{ meaning }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
