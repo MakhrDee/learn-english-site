@@ -15,8 +15,8 @@ def vocabulary(request):
 
 
 def lessons_list(request):
-    terms = vocab_work.get_terms_for_table()
-    return render(request, "lessons_list.html", context={"terms": terms})
+    lessons = vocab_work_db.db_get_lessons_for_table()
+    return render(request, "lessons_list.html", context={"lessons": lessons})
 
 
 def terms_list_new(request, slug):

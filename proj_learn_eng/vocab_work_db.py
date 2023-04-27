@@ -8,6 +8,13 @@ def db_get_words_for_table():
     return words
 
 
+def db_get_lessons_for_table():
+    lessons = []
+    for i, item in enumerate(Lessons.objects.all()):
+        lessons.append([i+1, item.topic, item.description])
+    return lessons
+
+
 '''def db_write_term(new_term, new_definition):
 term = Terms(term=new_term, definition=new_definition)
 term_addition = TermAuthors(termid=term.termid, termsource=”user”)

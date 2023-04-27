@@ -23,11 +23,11 @@
                 </tr>
             </thead>
             <tbody>
-                {% for cnt, term, definition in terms %} <!--TODO: Подключить БД-->
+                {% for index, topic, description in lessons %}
                 <tr>
-                    <td class="py-3">{{ cnt }}</td>
-                    <td class="py-3">{{ term }}</td>
-                    <td class="py-3">{{ definition }}</td>
+                    <td class="py-3">{{ index }}</td>
+                    <td class="py-3">{{ topic }}</td>
+                    <td class="py-3">{{ description }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
