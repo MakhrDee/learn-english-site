@@ -13,6 +13,13 @@ def db_write_word(new_word, new_translate, new_meaning):
     word.save()
 
 
+def db_delete_word(delete_word):
+    #TODO: обработать ошибку при введении несуществующего слова
+    del_word = Vocabulary.objects.get(index=delete_word)
+    del_word.delete()
+
+db_delete_word(3)
+
 '''def db_get_terms_stats():
 db_terms = len(TermAuthors.objects.filter(termsource=”db”))
 user_terms = len(TermAuthors.objects.filter(termsource=”user”))

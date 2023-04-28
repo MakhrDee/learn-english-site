@@ -56,11 +56,28 @@ def send_word(request):
         add_word(request)
 
 
+def send_del_word(request):
+    if request.method == "POST":
+        cache.clear()
+        user_name = request.POST.get("name")
+        delete_word = request.POST.get("delete_word")
+        context = {"user": user_name}
+        if len(delete_word) == 0:
+            context["success"] = False
+            context["comment"] = "Поле не может быть пустым"
+        else:
+            context["success"] = True
+            context["comment"] = "Выбранное слово удалено"
+            vocab_work_db.db_delete_word(delete_word)
+
+        vocabulary(request)
+
+
 def add_lesson(request):
     return render(request, "lesson_add.html")
 
 
-def send_lesson(request):
+def send_lesson(request):  # TODO: скорректировать функцию аккуратнее
     if request.method == "POST":
         cache.clear()
         user_name = request.POST.get("name")

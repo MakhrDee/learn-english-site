@@ -12,9 +12,61 @@
 {% endblock %}
 
 {% block content %}
+
 <div class="container px-4 py-5" id="vocab-table">
+
+
+    <!-- HTML-код кнопки (триггер модального окна)-->
+<a href="#edit-vocab" class="btn btn-lg btn-primary mx-0 mb-4" data-toggle="modal">Редактировать</a>
+
+<!-- HTML-код модального окна -->
+<div id="edit-vocab" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Редактирование словаря</h5>
+                <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            <div class="modal-body">
+                <p>Выберите, что Вы хотите сделать?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">
+                    <a href="/add-word" class="text-decoration-none text-light">Добавить слово</a>
+                </button>
+                <button type="button" class="btn btn-primary" data-target="#del-word" data-toggle="modal" data-dismiss="modal">Удалить слово</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="del-word" aria-hidden="true" aria-labelledby="del-word-label" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Удаление слова</h5>
+        <button type="button" class="close" data-dismiss="modal">×</button>
+      </div>
+      <div class="modal-body">
+          <label for="name">Ваше имя:</label>
+                <input type="text" class="form-control input-lg" name="name" id="name" placeholder="Иван Иванов" value required>
+          <label for="delete_word">Введите слово, которое хотите удалить:</label>
+                <input type="text" class="form-control input-lg" name="delete_word" id="delete_word" aria-describedby="deletion_note">
+          <div id="deletion_note" class="form-text">Слова, добавленные администратором, удалять нельзя!</div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-dismiss="modal" formaction="/send-del-word">Подтвердить</button>
+        <button class="btn btn-secondary" data-target="#edit-vocab" data-toggle="modal" data-dismiss="modal">Назад</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
     <div class="table-responsive">
-        <!--TODO: Сделать ссылку на форму добавления слова-->
+        <!--TODO: Сделать ссылку на форму добавления слова и реализовать удаление на всплывающем окне-->
+
         <table class="table table-striped table-hover table-bordered border-dark">
             <thead>
             <tr class="table-active">
