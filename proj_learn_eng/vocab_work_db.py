@@ -1,4 +1,4 @@
-from proj_learn_eng.models import Lessons, Vocabulary
+from proj_learn_eng.models import Vocabulary
 
 
 def db_get_words_for_table():
@@ -6,13 +6,6 @@ def db_get_words_for_table():
     for i, item in enumerate(Vocabulary.objects.all()):
         words.append([i+1, item.word, item.translate, item.meaning])
     return words
-
-
-def db_get_lessons_for_table():
-    lessons = []
-    for i, item in enumerate(Lessons.objects.all()):
-        lessons.append([i+1, item.topic, item.description])
-    return lessons
 
 
 def db_write_word(new_word, new_translate, new_meaning):

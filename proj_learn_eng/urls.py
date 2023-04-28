@@ -24,6 +24,7 @@ urlpatterns = [
     path('terms-list/<slug:slug>/', views.terms_list_new),
     path('add-word', views.add_word),
     path('send-word', views.send_word),
+    path('send-lesson', views.send_lesson),
     path('stats', views.show_stats),
     path('add-lesson', views.add_lesson)
 
