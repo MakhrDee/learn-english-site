@@ -3,6 +3,7 @@ from django.core.cache import cache
 from . import vocab_work
 from . import vocab_work_db
 from . import lesson_work_db
+from . import stats_work
 import random
 
 
@@ -70,8 +71,6 @@ def send_del_word(request):
             context["comment"] = "Выбранное слово удалено"
             vocab_work_db.db_delete_word(delete_word)
 
-        vocabulary(request)
-
 
 def add_lesson(request):
     return render(request, "lesson_add.html")
@@ -99,6 +98,6 @@ def send_lesson(request):  # TODO: скорректировать функцию
 
 
 def show_stats(request):
-    stats = vocab_work.get_terms_stats()
+    stats = stats_work.db_get_vocab_stats()
     return render(request, "stats.html", stats)
 
