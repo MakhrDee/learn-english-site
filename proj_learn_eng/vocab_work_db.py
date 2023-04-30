@@ -15,6 +15,7 @@ def db_write_word(new_word, new_translate, new_meaning):
 
 def db_delete_word(delete_word):
     #TODO: обработать ошибку при введении несуществующего слова
-    del_word = Vocabulary.objects.get(word=f"{delete_word}")
+    del_word = Vocabulary.objects.filter(word=delete_word)
     del_word.delete()
+
 
