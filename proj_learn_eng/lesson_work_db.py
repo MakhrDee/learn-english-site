@@ -11,3 +11,9 @@ def db_get_lessons_for_table():
 def db_write_lesson(new_topic, new_description):
     lesson = Lessons(topic=new_topic, description=new_description)
     lesson.save()
+
+
+def db_delete_lesson(delete_lesson):
+    #TODO: обработать ошибку при введении несуществующего слова
+    del_lesson = Lessons.objects.filter(word=delete_lesson)
+    del_lesson.delete()

@@ -13,8 +13,55 @@
 
 {% block content %}
 <div class="container px-4 py-5 my-5 bg-light" style="box-shadow: rgba(0, 0, 0, 0.3) 0 0 15px 10px;" id="lessons-table">
+
+
+    <!-- HTML-код кнопки (триггер модального окна)-->
+<a href="#edit-lessons" class="btn btn-lg btn-primary mx-0 mb-4" data-toggle="modal">Редактировать</a>
+
+<!-- HTML-код модального окна -->
+<div id="edit-lessons" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Редактирование списка уроков</h5>
+                <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            <div class="modal-body">
+                <p>Выберите, что Вы хотите сделать?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">
+                    <a href="/add-lesson" class="text-decoration-none text-light">Добавить урок</a>
+                </button>
+                <button type="button" class="btn btn-primary" data-target="#del-lesson" data-toggle="modal" data-dismiss="modal">Удалить урок</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="del-lesson" aria-hidden="true" aria-labelledby="del-lesson-label" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Удаление урока</h5>
+        <button type="button" class="close" data-dismiss="modal">×</button>
+      </div>
+      <div class="modal-body">
+          <label for="name">Ваше имя:</label>
+                <input type="text" class="form-control input-lg" name="name" id="name" placeholder="Иван Иванов" value required>
+          <label for="delete_lesson">Введите название урока, который хотите удалить:</label>
+                <input type="text" class="form-control input-lg" name="delete_lesson" id="delete_lesson" aria-describedby="deletion_note">
+          <div id="deletion_note" class="form-text">Уроки, добавленные администратором, удалять нельзя!</div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-dismiss="modal" formaction="/send-del-lesson">Подтвердить</button>
+        <button class="btn btn-secondary" data-target="#edit-lessons" data-toggle="modal" data-dismiss="modal">Назад</button>
+      </div>
+    </div>
+  </div>
+</div>
+
     <div class="table-responsive">
-        <!--TODO: Сделать ссылку на форму добавления слова и реализовать удаление на всплывающем окне-->
         <table class="table table-striped table-hover table-bordered border-dark">
             <thead>
                 <tr class="table-active">

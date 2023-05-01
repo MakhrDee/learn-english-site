@@ -26,6 +26,7 @@ urlpatterns = [
     path('send-word', views.send_word),
     path('send-lesson', views.send_lesson),
     path('send-del-word', views.send_del_word),
+    path('send-del-lesson', views.send_del_lesson),
     path('stats', views.show_stats),
     path('add-lesson', views.add_lesson)
 

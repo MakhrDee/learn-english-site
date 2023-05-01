@@ -65,6 +65,26 @@ def send_del_word(request):
         vocabulary(request)
 
 
+def send_del_lesson(request):
+    if request.method == "POST":
+        cache.clear()
+        user_name = request.POST.get("name")
+        delete_lesson = request.POST.get("delete_lesson", "")
+        context = {"user": user_name}
+        if len(delete_lesson) == 0 or len(user_name) == 0:
+            context["success"] = False
+            context["comment"] = "Поле не может быть пустым"
+        else:
+            context["success"] = True
+            context["comment"] = "Выбранный урок удален"
+            lesson_work_db.db_delete_lesson(delete_lesson)
+        if context["success"]:
+            context["success-title"] = ""
+        return render(request, "success_request.html", context)
+    else:
+        lessons_list(request)
+
+
 def add_lesson(request):
     return render(request, "lesson_add.html")
 
