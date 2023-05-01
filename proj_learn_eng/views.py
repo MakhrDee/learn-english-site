@@ -1,10 +1,8 @@
 from django.shortcuts import render
 from django.core.cache import cache
-from . import vocab_work
 from . import vocab_work_db
 from . import lesson_work_db
 from . import stats_work
-import random
 
 
 def index(request):
@@ -19,16 +17,6 @@ def vocabulary(request):
 def lessons_list(request):
     lessons = lesson_work_db.db_get_lessons_for_table()
     return render(request, "lessons_list.html", context={"lessons": lessons})
-
-
-def terms_list_new(request, slug):
-    terms = vocab_work.get_terms_for_table()
-    if slug == 'random':
-        random_term = list()
-        random_term.append(random.choice(terms))
-        return render(request, "vocab.html", context={"terms": random_term, "slug": slug})
-    else:
-        return render(request, "vocab.html", context={"terms": terms})
 
 
 def add_word(request):
@@ -81,7 +69,7 @@ def add_lesson(request):
     return render(request, "lesson_add.html")
 
 
-def send_lesson(request):  # TODO: скорректировать функцию аккуратнее
+def send_lesson(request):
     if request.method == "POST":
         cache.clear()
         user_name = request.POST.get("name")
@@ -105,4 +93,3 @@ def send_lesson(request):  # TODO: скорректировать функцию
 def show_stats(request):
     stats = stats_work.db_get_vocab_stats()
     return render(request, "stats.html", stats)
-
